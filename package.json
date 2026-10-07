@@ -1,0 +1,24 @@
+{
+  "name": "monika-learning",
+  "version": "1.0.0",
+  "description": "Auto-graded JavaScript practice exercises",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node runner/watch.js",
+    "check": "node runner/cli.js check",
+    "check:level": "node runner/cli.js check:level",
+    "progress": "node runner/cli.js progress",
+    "solution": "node runner/cli.js solution",
+    "gen:expected": "node runner/cli.js gen:expected",
+    "reset": "node runner/cli.js reset",
+    "verify:readmes": "node scripts/verify-readmes.js",
+    "test": "node --test runner/__tests__/**/*.test.js"
+  },
+  "dependencies": {
+    "chokidar": "^4.0.3",
+    "picocolors": "^1.1.1"
+  }
+}

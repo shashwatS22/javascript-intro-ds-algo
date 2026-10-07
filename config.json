@@ -1,0 +1,6 @@
+{
+  "clearScreen": true,
+  "timeoutMs": 5000,
+  "strictProgression": true,
+  "solutionUnlockAfterFailures": 3
+}

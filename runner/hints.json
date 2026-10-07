@@ -1,0 +1,8 @@
+{
+  "04-for-loops/12-fibonacci": "Check your loop's starting values.",
+  "04-for-loops/07-count-digits": "Use a loop to divide the number by 10 until it becomes 0.",
+  "04-for-loops/09-power": "Multiply a running total by the base each time through the loop.",
+  "06-patterns/09-pyramid": "Build each row as a string with spaces before the stars.",
+  "08-functions/07-apply-twice": "Call the function once, then call it again on that result.",
+  "13-recursion/05-factorial": "Remember: factorial(0) should return 1."
+}

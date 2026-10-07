@@ -1,0 +1,3 @@
+math: 90
+science: 85
+art: 72

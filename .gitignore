@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Learner progress (local only)
+progress.json
+progress.json.bak
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor (local overrides)
+.idea/
+*.swp
+*.swo
+*~
+
+# Test / coverage
+coverage/
