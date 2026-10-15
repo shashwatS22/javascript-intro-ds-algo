@@ -7,7 +7,11 @@
  * DO NOT CHANGE the GIVEN values.
  *
  * EXPECTED OUTPUT
- * See 10-inverted-pyramid.expected.txt
+ * *********
+ *  *******
+ *   *****
+ *    ***
+ *     *
  */
 
 // ---- GIVEN ----

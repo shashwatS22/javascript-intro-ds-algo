@@ -7,7 +7,11 @@
  * DO NOT CHANGE the GIVEN values.
  *
  * EXPECTED OUTPUT
- * See 06-inverted-number-triangle.expected.txt
+ * 1 2 3 4 5
+ * 1 2 3 4
+ * 1 2 3
+ * 1 2
+ * 1
  */
 
 // ---- GIVEN ----

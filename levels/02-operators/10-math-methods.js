@@ -15,3 +15,5 @@
  */
 
 // Your code below 👇
+console.log(Math.abs(-7));
+console.log()

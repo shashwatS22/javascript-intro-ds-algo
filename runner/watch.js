@@ -26,11 +26,14 @@ async function loadConfig() {
 
 printBanner();
 
-const watcher = chokidar.watch(path.join(root, 'levels'), {
-  ignored: ['**/*.test.js', '**/node_modules/**', '**/helpers/**'],
-  ignoreInitial: true,
-  awaitWriteFinish: { stabilityThreshold: 120, pollInterval: 20 },
-});
+const watcher = chokidar.watch(
+  [path.join(root, 'levels'), path.join(root, 'ts-drills'), path.join(root, 'backend-drills')],
+  {
+    ignored: ['**/*.test.js', '**/*.test.ts', '**/node_modules/**', '**/helpers/**'],
+    ignoreInitial: true,
+    awaitWriteFinish: { stabilityThreshold: 120, pollInterval: 20 },
+  },
+);
 
 let running = false;
 let pendingRel = null;
@@ -56,7 +59,12 @@ async function handleFile(rel) {
       process.stdout.write(pc.dim(`\n  → ${id} saved — checking…\n`));
 
       const config = await loadConfig();
-      if (config.strictProgression && level) {
+      if (
+        config.strictProgression &&
+        level &&
+        !id?.startsWith('ts-drills/') &&
+        !id?.startsWith('backend-drills/')
+      ) {
         const progress = await getFullProgress();
         const access = await canAccessLevel(level, progress, true);
         if (!access.allowed) {
@@ -83,5 +91,7 @@ watcher.on('add', (rel) => {
 });
 
 watcher.on('ready', () => {
-  console.log(pc.dim('Watching levels/ — save any exercise to check it.\n'));
+  console.log(
+    pc.dim('Watching levels/, ts-drills/, and backend-drills/ — save any exercise to check it.\n'),
+  );
 });

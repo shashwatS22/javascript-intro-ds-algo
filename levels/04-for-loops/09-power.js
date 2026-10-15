@@ -16,3 +16,8 @@ const exp = 5;
 // ---------------
 
 // Your code below 👇
+let p = 1;
+for (let i = 0; i < exp; i++) {
+  p = p * base;
+}
+console.log(p);

@@ -16,4 +16,4 @@ const last = "Lovelace";
 // ---------------
 
 // Your code below 👇
-console.log("first and last")
+console.log(`${first} ${last}`)

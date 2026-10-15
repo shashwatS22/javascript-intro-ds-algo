@@ -7,7 +7,13 @@
  * DO NOT CHANGE the GIVEN values.
  *
  * EXPECTED OUTPUT
- * See 13-butterfly.expected.txt
+ * *      *
+ * **    **
+ * ***  ***
+ * ********
+ * ***  ***
+ * **    **
+ * *      *
  */
 
 // ---- GIVEN ----

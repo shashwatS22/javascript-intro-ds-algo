@@ -7,7 +7,15 @@
  * DO NOT CHANGE the GIVEN values.
  *
  * EXPECTED OUTPUT
- * See 12-half-diamond.expected.txt
+ * *
+ * **
+ * ***
+ * ****
+ * *****
+ * ****
+ * ***
+ * **
+ * *
  */
 
 // ---- GIVEN ----

@@ -16,3 +16,4 @@ const b = 5;
 // ---------------
 
 // Your code below 👇
+console.log(Math.floor(a/b));

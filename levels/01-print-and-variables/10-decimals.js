@@ -15,3 +15,4 @@ const pi = 3.14159;
 // ---------------
 
 // Your code below 👇
+console.log(pi.toFixed(2))

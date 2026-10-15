@@ -96,13 +96,14 @@ const n = 3;
 for (let i = 1; i <= n; i++) {
   let line = "";
   for (let j = 0; j < i; j++) {
+    if (j > 0) line += " ";
     line += i;
   }
   console.log(line);
 }
 // 1
-// 22
-// 333
+// 2 2
+// 3 3 3
 ```
 
 ### Inverted triangle
@@ -154,18 +155,13 @@ Each row needs leading spaces, then stars with spaces between:
 const n = 3;
 for (let i = 1; i <= n; i++) {
   let line = "";
-  for (let s = 0; s < n - i; s++) {
-    line += " ";
-  }
-  for (let j = 0; j < i; j++) {
-    if (j > 0) line += " ";
-    line += "*";
-  }
+  line += " ".repeat(n - i);
+  line += "*".repeat(2 * i - 1);
   console.log(line);
 }
 //   *
-//  * *
-// * * *
+//  ***
+// *****
 ```
 
 Note the leading spaces on each line. The first inner loop adds spaces. The second inner loop adds stars.

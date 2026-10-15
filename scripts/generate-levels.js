@@ -575,33 +575,7 @@ while (i <= n) {
 }`,
       },
       {
-        file: '02-sum-digits-while',
-        task: 'Print the digit sum using `while`.',
-        given: `const n = 48291;`,
-        expectedComment: '24',
-        solution: `let num = n;
-let sum = 0;
-while (num > 0) {
-  sum += num % 10;
-  num = Math.floor(num / 10);
-}
-console.log(sum);`,
-      },
-      {
-        file: '03-reverse-while',
-        task: 'Print it reversed using `while`.',
-        given: `const n = 9081;`,
-        expectedComment: '1809',
-        solution: `let num = n;
-let reversed = 0;
-while (num > 0) {
-  reversed = reversed * 10 + (num % 10);
-  num = Math.floor(num / 10);
-}
-console.log(reversed);`,
-      },
-      {
-        file: '04-palindrome-number',
+        file: '02-palindrome-number',
         task: 'Print `palindrome` or `not palindrome`.',
         given: `const n = 12321;`,
         expectedComment: 'palindrome',
@@ -619,7 +593,7 @@ if (reversed === n) {
 }`,
       },
       {
-        file: '05-armstrong',
+        file: '03-armstrong',
         task: 'Print `armstrong` if the sum of each digit cubed equals n.',
         given: `const n = 153;`,
         expectedComment: 'armstrong',
@@ -638,7 +612,7 @@ if (sum === n) {
 }`,
       },
       {
-        file: '06-gcd',
+        file: '04-gcd',
         task: 'Print the GCD using Euclid\'s algorithm with `while`.',
         given: `const a = 48;\nconst b = 18;`,
         expectedComment: '6',
@@ -652,20 +626,7 @@ while (y !== 0) {
 console.log(x);`,
       },
       {
-        file: '07-count-digits-while',
-        task: 'Print its digit count using `while`.',
-        given: `const n = 1000000;`,
-        expectedComment: '7',
-        solution: `let num = n;
-let count = 0;
-while (num > 0) {
-  count++;
-  num = Math.floor(num / 10);
-}
-console.log(count);`,
-      },
-      {
-        file: '08-to-binary',
+        file: '05-to-binary',
         task: 'Print its binary form by repeatedly dividing by 2 (no `.toString(2)`).',
         given: `const n = 25;`,
         expectedComment: '11001',
@@ -678,7 +639,7 @@ while (num > 0) {
 console.log(binary);`,
       },
       {
-        file: '09-do-while',
+        file: '06-do-while',
         task: 'Use `do...while` to show the body runs once even though the condition is false. Print `ran once` then `loop finished`.',
         given: `const n = 0;`,
         expectedComment: 'ran once\nloop finished',
@@ -688,7 +649,7 @@ console.log(binary);`,
 console.log('loop finished');`,
       },
       {
-        file: '10-collatz',
+        file: '07-collatz',
         task: 'Count the steps to reach 1 (even → n/2, odd → 3n+1). Print the count.',
         given: `const n = 27;`,
         expectedComment: '111',
@@ -941,67 +902,7 @@ for (let i = n - 1; i >= 1; i--) {
     dir: '07-number-problems',
     exercises: [
       {
-        file: '01-count-digits',
-        task: 'Print how many digits n has.',
-        given: `const n = 946213;`,
-        expectedComment: '6',
-        solution: `let count = 0;
-let num = n;
-while (num > 0) {
-  count++;
-  num = Math.floor(num / 10);
-}
-console.log(count);`,
-      },
-      {
-        file: '02-reverse',
-        task: 'Print n reversed as a number (leading zeros dropped).',
-        given: `const n = 700;`,
-        expectedComment: '7',
-        solution: `let num = n;
-let reversed = 0;
-while (num > 0) {
-  reversed = reversed * 10 + (num % 10);
-  num = Math.floor(num / 10);
-}
-console.log(reversed);`,
-      },
-      {
-        file: '03-palindrome',
-        task: 'Print `true` if n is a palindrome, otherwise `false`.',
-        given: `const n = 1221;`,
-        expectedComment: 'true',
-        solution: `let num = n;
-let reversed = 0;
-let temp = num;
-while (temp > 0) {
-  reversed = reversed * 10 + (temp % 10);
-  temp = Math.floor(temp / 10);
-}
-console.log(reversed === n);`,
-      },
-      {
-        file: '04-armstrong',
-        task: 'Print `true` if n is an Armstrong number, otherwise `false`.',
-        given: `const n = 371;`,
-        expectedComment: 'true',
-        solution: `let temp = n;
-let digits = 0;
-while (temp > 0) {
-  digits++;
-  temp = Math.floor(temp / 10);
-}
-temp = n;
-let sum = 0;
-while (temp > 0) {
-  const d = temp % 10;
-  sum += d ** digits;
-  temp = Math.floor(temp / 10);
-}
-console.log(sum === n);`,
-      },
-      {
-        file: '05-divisors',
+        file: '01-divisors',
         task: 'Print all divisors of n, space-separated, on one line.',
         given: `const n = 36;`,
         expectedComment: '1 2 3 4 6 9 12 18 36',
@@ -1014,7 +915,7 @@ for (let i = 1; i <= n; i++) {
 console.log(divisors.join(' '));`,
       },
       {
-        file: '06-is-prime',
+        file: '02-is-prime',
         task: 'Print `prime` or `not prime`. Loop only to `Math.sqrt(n)`.',
         given: `const n = 97;`,
         expectedComment: 'prime',
@@ -1028,21 +929,7 @@ for (let i = 2; i <= Math.sqrt(n); i++) {
 console.log(prime ? 'prime' : 'not prime');`,
       },
       {
-        file: '07-gcd',
-        task: 'Print the greatest common divisor of a and b.',
-        given: `const a = 120;\nconst b = 45;`,
-        expectedComment: '15',
-        solution: `let x = a;
-let y = b;
-while (y !== 0) {
-  const rem = x % y;
-  x = y;
-  y = rem;
-}
-console.log(x);`,
-      },
-      {
-        file: '08-lcm',
+        file: '03-lcm',
         task: 'Print the LCM of a and b using `(a * b) / gcd`.',
         given: `const a = 12;\nconst b = 18;`,
         expectedComment: '36',
@@ -1057,7 +944,7 @@ const gcd = x;
 console.log((a * b) / gcd);`,
       },
       {
-        file: '09-sum-divisors',
+        file: '04-sum-divisors',
         task: 'Print the sum of all divisors of n, including n itself.',
         given: `const n = 28;`,
         expectedComment: '56',
@@ -1070,7 +957,7 @@ for (let i = 1; i <= n; i++) {
 console.log(sum);`,
       },
       {
-        file: '10-perfect-number',
+        file: '05-perfect-number',
         task: 'Print `perfect` if the proper divisors of n sum to n.',
         given: `const n = 496;`,
         expectedComment: 'perfect',
@@ -1083,7 +970,7 @@ for (let i = 1; i < n; i++) {
 console.log(sum === n ? 'perfect' : 'not perfect');`,
       },
       {
-        file: '11-prime-factors',
+        file: '06-prime-factors',
         task: 'Print the prime factors of n with repeats, space-separated.',
         given: `const n = 360;`,
         expectedComment: '2 2 2 3 3 5',
@@ -1100,7 +987,7 @@ while (num > 1) {
 console.log(factors.join(' '));`,
       },
       {
-        file: '12-primes-to-n',
+        file: '07-primes-to-n',
         task: 'Print every prime from 2 to n, space-separated.',
         given: `const n = 30;`,
         expectedComment: '2 3 5 7 11 13 17 19 23 29',
@@ -1120,7 +1007,7 @@ for (let i = 2; i <= n; i++) {
 console.log(primes.join(' '));`,
       },
       {
-        file: '13-nth-prime',
+        file: '08-nth-prime',
         task: 'Print the k-th prime number.',
         given: `const k = 20;`,
         expectedComment: '71',
@@ -1145,7 +1032,7 @@ while (count < k) {
 }`,
       },
       {
-        file: '14-digit-frequency',
+        file: '09-digit-frequency',
         task: 'Print each distinct digit and its count as `digit:count`, ascending, space-separated.',
         given: `const n = 1223334444;`,
         expectedComment: '1:1 2:2 3:3 4:4',
@@ -2516,14 +2403,7 @@ function formatExpectedComment(exercise) {
   if (exercise.test) {
     return 'All tests pass';
   }
-  if (exercise.expectedComment === null) {
-    return `See ${exercise.file}.expected.txt`;
-  }
-  if (exercise.expectedComment === undefined) {
-    return `See ${exercise.file}.expected.txt`;
-  }
-  const lines = exercise.expectedComment.split('\n');
-  if (lines.length > 6) {
+  if (exercise.expectedComment === null || exercise.expectedComment === undefined) {
     return `See ${exercise.file}.expected.txt`;
   }
   return exercise.expectedComment;
@@ -2634,7 +2514,24 @@ export function subtract(a, b) {
   await writeFile(path.join(solDataDir, 'sample.txt'), 'hello from a file');
 }
 
+async function enrichExercise(levelDir, exercise) {
+  if (levelDir === '06-patterns' && exercise.expectedComment === null) {
+    try {
+      const expectedPath = path.join(levelsDir, levelDir, `${exercise.file}.expected.txt`);
+      const raw = await fs.readFile(expectedPath, 'utf8');
+      return {
+        ...exercise,
+        expectedComment: raw.replace(/\r\n/g, '\n').replace(/\n+$/, ''),
+      };
+    } catch {
+      return exercise;
+    }
+  }
+  return exercise;
+}
+
 async function generateExercise(levelDir, exercise) {
+  exercise = await enrichExercise(levelDir, exercise);
   const stub = buildStub(levelDir, exercise);
   const solution = buildSolution(exercise);
   const testContent = buildTestFile(exercise);

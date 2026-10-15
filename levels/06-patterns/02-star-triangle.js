@@ -7,7 +7,11 @@
  * DO NOT CHANGE the GIVEN values.
  *
  * EXPECTED OUTPUT
- * See 02-star-triangle.expected.txt
+ * *
+ * **
+ * ***
+ * ****
+ * *****
  */
 
 // ---- GIVEN ----

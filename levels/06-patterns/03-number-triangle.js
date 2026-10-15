@@ -7,7 +7,11 @@
  * DO NOT CHANGE the GIVEN values.
  *
  * EXPECTED OUTPUT
- * See 03-number-triangle.expected.txt
+ * 1
+ * 1 2
+ * 1 2 3
+ * 1 2 3 4
+ * 1 2 3 4 5
  */
 
 // ---- GIVEN ----

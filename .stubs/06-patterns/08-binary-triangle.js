@@ -7,7 +7,11 @@
  * DO NOT CHANGE the GIVEN values.
  *
  * EXPECTED OUTPUT
- * See 08-binary-triangle.expected.txt
+ * 1
+ * 1 0
+ * 1 0 1
+ * 1 0 1 0
+ * 1 0 1 0 1
  */
 
 // ---- GIVEN ----

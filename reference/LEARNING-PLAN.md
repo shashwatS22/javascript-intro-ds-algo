@@ -56,6 +56,7 @@ The review block is the one people skip and it's the one that makes it stick. Do
 | **1. JavaScript** | 1–4 | 15 levels, 190 drills. Variables → recursion → hashing → async. | All levels green |
 | **2. DSA foundation** | 1–6 (parallel) | Striver Step 1 & 2 on LeetCode | ~60 problems solved |
 | **3. TypeScript** | 5–6 | Types, interfaces, generics. Re-do 30 JS drills in TS. | `ts-drills/` green |
+| **3b. Backend APIs** | 5–7 (parallel) | Express, REST, middleware, in-memory CRUD | `backend-drills/` green |
 | **4. Web fundamentals** | 7–8 | HTML, CSS, the DOM, fetch, browser dev tools | 2 static pages + 1 DOM app |
 | **5. React** | 9–11 | Components, props, state, effects, forms, lists | 3 small apps |
 | **6. Next.js** | 12–16 | App Router, server components, routing, data, API routes, DB, auth, deploy | 1 deployed full-stack app |
@@ -74,9 +75,9 @@ Each level in the repo has a `README.md` you write once (Cursor drafts it) cover
 | 02 | Operators | 12 | arithmetic, `%`, `==` vs `===`, logical ops, ternary, `Math.*` | — |
 | 03 | Conditionals | 12 | `if`/`else if`/`else`, `switch`, truthy/falsy | Striver Lec 1 basics |
 | 04 | For loops | 14 | `for`, accumulators, `break`/`continue`, loop-based number work | FizzBuzz, simple sums |
-| 05 | While loops | 10 | `while`, `do...while`, digit extraction via `%` and `/` | — |
+| 05 | While loops | 7 | `while`, `do...while`, digit extraction via `%` and `/` | — |
 | 06 | Nested loops & patterns | 16 | loops inside loops, row/column thinking | Striver Lec 2 (22 patterns) |
-| 07 | Number problems | 14 | primes, divisors, GCD, Armstrong, palindrome numbers | **Striver Lec 4 — Basic Maths** |
+| 07 | Number problems | 9 | primes, divisors, LCM, perfect numbers, factorization | **Striver Lec 4 — Basic Maths** |
 | 08 | Functions | 14 | declarations, arrows, params, return, scope, closures, callbacks | Refactoring all prior work |
 | 09 | Strings | 14 | indexing, immutability, all core string methods | Striver Strings (basic) |
 | 10 | Arrays | 16 | indexing, mutation methods, traversal, search, rotation | **Striver Step 3 — Arrays (easy)** |
@@ -86,7 +87,7 @@ Each level in the repo has a `README.md` you write once (Cursor drafts it) cover
 | 14 | Hashing | 10 | `Map`, `Set`, frequency counting, `O(1)` lookup | **Striver Lec 6 — Hashing**, Two Sum |
 | 15 | Modules, errors, async | 12 | `import`/`export`, `try`/`catch`, Promises, `async`/`await`, `fs` | Required for React/Next.js |
 
-**Total: 190 exercises.**
+**Total: 182 exercises** (8 repeat drills removed from levels 05 and 07).
 
 The full exercise list — every file name, task, fixed inputs, and expected output — is in `CURSOR-BUILD-SPEC.md` § 8.
 
@@ -143,7 +144,14 @@ She reads the problem on the Striver sheet, then solves it **on LeetCode in Java
 
 Do not treat TS as a new language. It's JavaScript plus annotations, and she'll already know the JavaScript.
 
-**Setup:** a `ts-drills/` folder in the same repo. Same watcher, same PASS/FAIL loop, `tsx` instead of `node`. `strict: true` from day one — learning TS with `strict: false` teaches the wrong habits.
+**Setup (in this repo):** [`ts-drills/`](../ts-drills/README.md) — 45 drills in two folders:
+
+| Folder | Drills | Content |
+|---|---|---|
+| `01-concepts/` | 15 | One exercise per topic below |
+| `02-redo/` | 30 | Typed ports of JS levels 08–14 |
+
+Same watcher as JavaScript (`npm run dev` watches `levels/` and `ts-drills/`). Each save type-checks the file with **`strict: true`**, then runs with `tsx` and compares output or tests. TypeScript progress does not block JS levels. Regenerate content with `npm run generate:ts-drills`.
 
 **Topics, in order:**
 
@@ -166,6 +174,24 @@ Do not treat TS as a new language. It's JavaScript plus annotations, and she'll 
 **Practice:** re-do 30 chosen JS drills (levels 08–14) with full type annotations. Same expected outputs, so the grader is reused as-is. Then convert 5 LeetCode solutions to TS.
 
 **Duration:** 8–10 days full-time.
+
+---
+
+## 6b. Backend drills — Node + Express (in repo)
+
+After level 15 she knows Promises and one file read, but not how to **build an API**. [`backend-drills/`](../backend-drills/README.md) fills that gap before HTML or Next.js.
+
+| What | Details |
+|---|---|
+| **When** | After level 15 (can run in parallel with TypeScript) |
+| **Drills** | 12 — raw `node:http`, then Express routes, JSON body, middleware, router, in-memory CRUD |
+| **Grading** | Same watcher (`npm run dev`). Each file exports `createApp()`; a fixed `CHECK` block at the bottom `fetch`es the server and prints status + body |
+| **Dependency** | `express` only |
+| **Progress** | Does not block JS levels |
+
+Regenerate stubs with `npm run generate:backend-drills`.
+
+**Duration:** 3–5 days alongside other tracks.
 
 ---
 
@@ -227,7 +253,7 @@ Do not treat TS as a new language. It's JavaScript plus annotations, and she'll 
 
 | Gate | Test |
 |---|---|
-| Leave Phase 1 | All 190 drills green. Can write "count vowels in a string" and "find second largest in an array" from a blank file, no reference, in under 5 minutes each. |
+| Leave Phase 1 | All 182 JS drills green. Can write "count vowels in a string" and "find second largest in an array" from a blank file, no reference, in under 5 minutes each. |
 | Leave Phase 3 | Can annotate an unannotated JS file and get zero `any`s. Can read a TS error and explain what it means. |
 | Leave Phase 4 | Can build a responsive two-column layout from a screenshot without looking up flexbox. |
 | Leave Phase 5 | Can build a filterable list from an API, from scratch, in one sitting. |
@@ -242,5 +268,5 @@ The repo handles correctness. It cannot handle the things that actually cause be
 - **Review `NOTES.md` every 2–3 days.** The "Confused about" list is your teaching agenda.
 - **Explain *why*, not *how*.** When she asks about `===`, don't give the rule — show her a bug it causes.
 - **Let her struggle for 15 minutes.** Rescuing too early is the most common way well-meaning teachers slow someone down.
-- **Celebrate green levels.** 190 exercises is a long grind; visible progress is what carries people through week 3.
+- **Celebrate green levels.** 182 JS exercises is a long grind; visible progress is what carries people through week 3.
 - **Don't add topics ahead of schedule** because they seem interesting. The ordering here is deliberate — every level only needs things from earlier levels.

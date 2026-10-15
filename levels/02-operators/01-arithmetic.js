@@ -18,5 +18,9 @@
 const a = 17;
 const b = 5;
 // ---------------
-
 // Your code below 👇
+console.log(a + b)
+console.log(a - b);
+console.log(a * b);
+console.log(a / b);
+console.log(a % b);

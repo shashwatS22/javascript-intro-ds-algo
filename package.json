@@ -15,10 +15,15 @@
     "gen:expected": "node runner/cli.js gen:expected",
     "reset": "node runner/cli.js reset",
     "verify:readmes": "node scripts/verify-readmes.js",
+    "generate:ts-drills": "node scripts/generate-ts-drills.js",
+    "generate:backend-drills": "node scripts/generate-backend-drills.js",
     "test": "node --test runner/__tests__/**/*.test.js"
   },
   "dependencies": {
     "chokidar": "^4.0.3",
-    "picocolors": "^1.1.1"
+    "express": "^5.3.0",
+    "picocolors": "^1.1.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
   }
 }

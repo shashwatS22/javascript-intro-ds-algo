@@ -7,7 +7,11 @@
  * DO NOT CHANGE the GIVEN values.
  *
  * EXPECTED OUTPUT
- * See 05-inverted-star-triangle.expected.txt
+ * *****
+ * ****
+ * ***
+ * **
+ * *
  */
 
 // ---- GIVEN ----

@@ -256,4 +256,4 @@ An object `{}` stores key–value pairs. Here keys are digits and values are cou
 Type every example above into `playground/scratch.js` and run it. Change a number and predict what happens before you run it again.
 
 ## Exercises
-Work through `01-count-digits.js` to `14-digit-frequency.js` in order. Save each file to check it.
+Work through `01-divisors.js` to `09-digit-frequency.js` in order. Save each file to check it.

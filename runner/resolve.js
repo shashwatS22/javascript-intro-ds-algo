@@ -5,6 +5,10 @@ const root = process.cwd();
 const levelsDir = path.join(root, 'levels');
 const solutionsDir = path.join(root, '.solutions');
 const stubsDir = path.join(root, '.stubs');
+const tsDrillsDir = path.join(root, 'ts-drills');
+const tsSolutionsDir = path.join(root, '.solutions', 'ts-drills');
+const backendDrillsDir = path.join(root, 'backend-drills');
+const backendSolutionsDir = path.join(root, '.solutions', 'backend-drills');
 
 export function getRoot() {
   return root;
@@ -22,7 +26,35 @@ export function getStubsDir() {
   return stubsDir;
 }
 
+export function getTsDrillsDir() {
+  return tsDrillsDir;
+}
+
+export function getTsSolutionsDir() {
+  return tsSolutionsDir;
+}
+
 export function pathToId(absPath) {
+  const backendRel = path.relative(backendDrillsDir, absPath);
+  if (!backendRel.startsWith('..')) {
+    return `backend-drills/${backendRel.replace(/\.js$/, '').replace(/\\/g, '/')}`;
+  }
+
+  const backendSolRel = path.relative(backendSolutionsDir, absPath);
+  if (!backendSolRel.startsWith('..')) {
+    return `backend-drills/${backendSolRel.replace(/\.js$/, '').replace(/\\/g, '/')}`;
+  }
+
+  const tsRel = path.relative(tsDrillsDir, absPath);
+  if (!tsRel.startsWith('..')) {
+    return `ts-drills/${tsRel.replace(/\.ts$/, '').replace(/\\/g, '/')}`;
+  }
+
+  const tsSolRel = path.relative(tsSolutionsDir, absPath);
+  if (!tsSolRel.startsWith('..')) {
+    return `ts-drills/${tsSolRel.replace(/\.ts$/, '').replace(/\\/g, '/')}`;
+  }
+
   const rel = path.relative(levelsDir, absPath);
   if (rel.startsWith('..')) {
     const solRel = path.relative(solutionsDir, absPath);
@@ -35,15 +67,28 @@ export function pathToId(absPath) {
 }
 
 export function idToPath(id, useSolutions = false) {
+  if (id.startsWith('backend-drills/')) {
+    const rest = id.slice('backend-drills/'.length);
+    const base = useSolutions ? backendSolutionsDir : backendDrillsDir;
+    return path.join(base, `${rest}.js`);
+  }
+  if (id.startsWith('ts-drills/')) {
+    const rest = id.slice('ts-drills/'.length);
+    const base = useSolutions ? tsSolutionsDir : tsDrillsDir;
+    return path.join(base, `${rest}.ts`);
+  }
   const base = useSolutions ? solutionsDir : levelsDir;
   return path.join(base, `${id}.js`);
 }
 
 export function isExerciseFile(relPath) {
-  if (!relPath.endsWith('.js')) return false;
-  if (relPath.endsWith('.test.js')) return false;
-  if (relPath.includes('/helpers/') || relPath.includes('\\helpers\\')) return false;
-  return true;
+  const normalized = relPath.replace(/\\/g, '/');
+  if (normalized.endsWith('.test.js') || normalized.endsWith('.test.ts')) return false;
+  if (normalized.includes('/helpers/')) return false;
+  if (normalized.startsWith('backend-drills/') && normalized.endsWith('.js')) return true;
+  if (normalized.startsWith('ts-drills/') && normalized.endsWith('.ts')) return true;
+  if (normalized.endsWith('.js') && !normalized.startsWith('backend-drills/')) return true;
+  return false;
 }
 
 export async function listLevels() {

@@ -132,7 +132,11 @@ export async function printResult(result) {
   }
 
   if (result.hint) {
-    console.log(pc.cyan(`  Hint: ${result.hint}`));
+    const hintLines = result.hint.split('\n');
+    console.log(pc.cyan(`  Hint: ${hintLines[0]}`));
+    for (let i = 1; i < hintLines.length; i++) {
+      console.log(pc.cyan(`        ${hintLines[i]}`));
+    }
     console.log('');
   }
 }

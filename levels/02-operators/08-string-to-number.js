@@ -16,3 +16,5 @@ const s = "42";
 // ---------------
 
 // Your code below 👇
+console.log(s + 8)
+console.log(Number(s)+8)

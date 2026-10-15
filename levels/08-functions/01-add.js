@@ -9,7 +9,6 @@
  * EXPORT
  * export function add(a, b)
 
- * EXPECTED OUTPUT
  * All tests pass
  */
 

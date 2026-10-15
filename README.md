@@ -202,9 +202,9 @@ Each level folder has a `README.md` with concept explanations. Read it before st
 | 02 | Operators | 12 |
 | 03 | Conditionals | 12 |
 | 04 | For loops | 14 |
-| 05 | While loops | 10 |
+| 05 | While loops | 7 |
 | 06 | Patterns | 16 |
-| 07 | Number problems | 14 |
+| 07 | Number problems | 9 |
 | 08 | Functions | 14 |
 | 09 | Strings | 14 |
 | 10 | Arrays | 16 |
@@ -214,6 +214,13 @@ Each level folder has a `README.md` with concept explanations. Read it before st
 | 14 | Hashing | 10 |
 | 15 | Modules, errors, async | 12 |
 
-**Total: 190 exercises.**
+**Total: 182 exercises.**
+
+After JavaScript levels are green:
+
+- **TypeScript:** [`ts-drills/`](ts-drills/README.md) (45 drills) — save any `.ts` file to grade it.
+- **Backend:** [`backend-drills/`](backend-drills/README.md) (12 drills) — Express APIs; save any file there to grade it.
+
+The watcher covers all three folders.
 
 Good luck. Save often.

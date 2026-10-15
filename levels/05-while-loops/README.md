@@ -190,4 +190,4 @@ For `n = 6`: 6 → 3 → 10 → 5 → 16 → 8 → 4 → 2 → 1 (8 steps).
 Type every example above into `playground/scratch.js` and run it. Change a number and predict what happens before you run it again.
 
 ## Exercises
-Work through `01-while-count.js` to `10-collatz.js` in order. Save each file to check it.
+Work through `01-while-count.js` to `07-collatz.js` in order. Save each file to check it.

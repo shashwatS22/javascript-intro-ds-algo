@@ -18,3 +18,7 @@ let x = 5;
 // ---------------
 
 // Your code below 👇
+console.log(x++);
+console.log(x);
+console.log(++x);
+console.log(x);

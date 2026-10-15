@@ -7,7 +7,15 @@
  * DO NOT CHANGE the GIVEN values.
  *
  * EXPECTED OUTPUT
- * See 11-diamond.expected.txt
+ *     *
+ *    ***
+ *   *****
+ *  *******
+ * *********
+ *  *******
+ *   *****
+ *    ***
+ *     *
  */
 
 // ---- GIVEN ----

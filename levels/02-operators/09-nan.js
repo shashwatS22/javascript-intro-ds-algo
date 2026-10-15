@@ -16,3 +16,5 @@ const x = Number("abc");
 // ---------------
 
 // Your code below 👇
+console.log(x)
+console.log(Number.isNaN(x));

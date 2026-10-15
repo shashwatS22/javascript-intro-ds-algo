@@ -1,6 +1,6 @@
 {
   "clearScreen": true,
   "timeoutMs": 5000,
-  "strictProgression": true,
+  "strictProgression": false,
   "solutionUnlockAfterFailures": 3
 }

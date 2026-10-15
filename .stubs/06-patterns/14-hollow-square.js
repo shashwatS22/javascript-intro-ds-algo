@@ -7,7 +7,11 @@
  * DO NOT CHANGE the GIVEN values.
  *
  * EXPECTED OUTPUT
- * See 14-hollow-square.expected.txt
+ * *****
+ * *   *
+ * *   *
+ * *   *
+ * *****
  */
 
 // ---- GIVEN ----

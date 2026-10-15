@@ -7,7 +7,11 @@
  * DO NOT CHANGE the GIVEN values.
  *
  * EXPECTED OUTPUT
- * See 01-star-square.expected.txt
+ * *****
+ * *****
+ * *****
+ * *****
+ * *****
  */
 
 // ---- GIVEN ----

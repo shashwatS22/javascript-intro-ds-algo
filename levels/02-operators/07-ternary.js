@@ -15,3 +15,4 @@ const n = 14;
 // ---------------
 
 // Your code below 👇
+console.log(n%2===0? "even":"odd");

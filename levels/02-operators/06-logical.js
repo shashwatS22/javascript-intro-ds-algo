@@ -19,3 +19,7 @@ const b = false;
 // ---------------
 
 // Your code below 👇
+console.log(a && b);
+console.log(a || b);
+console.log(!a);
+console.log(!b);

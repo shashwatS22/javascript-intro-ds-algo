@@ -53,11 +53,23 @@ export function buildDiff(expected, actual, maxLines = 20) {
 }
 
 export async function loadExpected(absPath) {
-  let expectedPath = absPath.replace(/\.js$/, '.expected.txt');
+  let expectedPath = absPath.replace(/\.(js|ts)$/, '.expected.txt');
   const solutionsMarker = `${path.sep}.solutions${path.sep}`;
-  const levelsMarker = `${path.sep}levels${path.sep}`;
   if (expectedPath.includes(solutionsMarker)) {
-    expectedPath = expectedPath.replace(solutionsMarker, levelsMarker);
+    if (expectedPath.includes(`${path.sep}backend-drills${path.sep}`)) {
+      expectedPath = expectedPath.replace(
+        `${path.sep}.solutions${path.sep}backend-drills${path.sep}`,
+        `${path.sep}backend-drills${path.sep}`,
+      );
+    } else if (expectedPath.includes(`${path.sep}ts-drills${path.sep}`)) {
+      expectedPath = expectedPath.replace(
+        `${path.sep}.solutions${path.sep}ts-drills${path.sep}`,
+        `${path.sep}ts-drills${path.sep}`,
+      );
+    } else {
+      const levelsMarker = `${path.sep}levels${path.sep}`;
+      expectedPath = expectedPath.replace(solutionsMarker, levelsMarker);
+    }
   }
   try {
     return await fs.readFile(expectedPath, 'utf8');
@@ -67,6 +79,9 @@ export async function loadExpected(absPath) {
 }
 
 export function getTestPath(absPath) {
+  if (absPath.endsWith('.ts')) {
+    return absPath.replace(/\.ts$/, '.test.ts');
+  }
   return absPath.replace(/\.js$/, '.test.js');
 }
 
@@ -79,6 +94,18 @@ export async function hasTestFile(absPath) {
     const solutionsMarker = `${path.sep}.solutions${path.sep}`;
     const levelsMarker = `${path.sep}levels${path.sep}`;
     if (testPath.includes(solutionsMarker)) {
+      if (testPath.includes(`${path.sep}ts-drills${path.sep}`)) {
+        const tsTest = testPath.replace(
+          `${path.sep}.solutions${path.sep}ts-drills${path.sep}`,
+          `${path.sep}ts-drills${path.sep}`,
+        );
+        try {
+          await fs.access(tsTest);
+          return tsTest;
+        } catch {
+          return null;
+        }
+      }
       const levelsTest = testPath.replace(solutionsMarker, levelsMarker);
       try {
         await fs.access(levelsTest);

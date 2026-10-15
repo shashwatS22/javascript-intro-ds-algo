@@ -16,3 +16,7 @@ let b = 2;
 // ---------------
 
 // Your code below 👇
+let t = a;
+a = b;
+b = t;
+console.log(`a=${a} b=${b}`)

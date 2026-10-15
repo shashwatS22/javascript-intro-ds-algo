@@ -18,3 +18,7 @@ let total = 100;
 // ---------------
 
 // Your code below 👇
+console.log(total += 20);
+console.log((total -= 30));
+console.log((total *= 2));
+console.log((total /=4));
